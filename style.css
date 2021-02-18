@@ -1,0 +1,29 @@
+
+.heading
+{
+font-size: 23px;
+width: 100%;
+margin: 0px;
+}
+
+#status,#no_of_objects_detected
+{
+font-size: 18px;
+}
+
+body{
+background-size:cover;
+}
+
+canvas{
+margin-top:100px;
+border:red dashed 5px;
+animation:example1 5s infinite;
+}
+
+@keyframes example1{
+0% {border:dashed 10px red}
+25% {border:dotted 10px yellow}
+50% {border:solid 10px green}
+100% {border:ridge 10px goldenrod}
+}
