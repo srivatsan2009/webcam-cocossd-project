@@ -1,7 +1,7 @@
 objects=[];
 status="";
 alarm="alarm.mp3";
-no_of=document.getElementById("no_of_objects_detected");
+person="";
 function preload() {
 sound="alarm.mp3";
 }
@@ -49,11 +49,11 @@ noFill();
 stroke(r,g,b);
 rect(objects[i].x, objects[i].y, objects[i].width ,objects[i].height);
 
-if(if_no==0) {
+if(person==results[0].label="person".height= "323.6757230758667".width="171.52088165283203".x="200.8232879638672".y="27.2459077835083") {
 alarm.play();
 document.getElementById("status:baby not detected");
 }
-else if(if_no==1) {
+else {
 alarm.stop();
 document.getElementById("status:baby detected");
 }
