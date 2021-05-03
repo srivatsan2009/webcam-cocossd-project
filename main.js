@@ -1,9 +1,9 @@
 objects=[];
 status="";
-alarm="alarm.mp3";
+alarm="";
 person="";
 function preload() {
-sound="alarm.mp3";
+alarm=loadSound("alarm.mp3");
 }
 
 function setup() {
@@ -13,7 +13,7 @@ video=createCapture(VIDEO);
 video.size(380,380);
 video.hide();
 objectdetection=ml5.objectDetector("cocossd",modeloaded);
-document.getElementById("status").innerHTML="status:detecting image"
+document.getElementById("status").innerHTML="status:detecting object"
 }
 
 function modeloaded() {
@@ -39,7 +39,7 @@ g=random(255);
 b=random(255);
 objectdetection.detect(video,gotresults);
 for (i=0; i<objects.length; i++) {
-document.getElementById("status").innerHTML="status:baby detected";
+document.getElementById("status").innerHTML="status:object detected";
 document.getElementById("no_of_objects_detected").innerHTML="no.of objects detected:"+objects.length;
 fill(r,g,b);
 percent=floor(objects[i].confidence*100);
@@ -49,13 +49,12 @@ noFill();
 stroke(r,g,b);
 rect(objects[i].x, objects[i].y, objects[i].width ,objects[i].height);
 
-if(person==results[0].label="person".height= "323.6757230758667".width="171.52088165283203".x="200.8232879638672".y="27.2459077835083") {
-alarm.play();
-document.getElementById("status:baby not detected");
+if(objects[i].label=="person") {
+document.getElementById("status").innerHTML="status:baby detected";
 }
 else {
-alarm.stop();
-document.getElementById("status:baby detected");
+alarm.play();
+document.getElementById("status").innerHTML="status:baby not detected";
 }
 }
 }
